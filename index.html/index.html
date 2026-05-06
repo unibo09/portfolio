@@ -3,170 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local AI Portfolio | 思考を繋ぐ、道具を研ぐ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>unibo09 Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono&display=swap');
-
-        :root {
-            --bg-beige: #F5F5DC;
-            --accent-brown: #5D4037;
-            --node-glow: rgba(255, 255, 255, 0.8);
-        }
-
         body {
-            background-color: var(--bg-beige);
-            font-family: 'Noto Sans JP', sans-serif;
-            color: var(--accent-brown);
-            overflow-x: hidden;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f5f5dc; /* ベージュ基調 */
+            color: #333;
             margin: 0;
+            padding: 0;
+            line-height: 1.6;
         }
-
-        /* 常に動く光の粒子 */
-        .particle {
-            position: absolute;
-            background: var(--node-glow);
-            border-radius: 50%;
-            pointer-events: none;
-            box-shadow: 0 0 10px var(--node-glow);
-            animation: move-particle 5s linear infinite;
-            z-index: 5;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
         }
-
-        @keyframes move-particle {
-            0% { transform: translate(0, 0); opacity: 0; }
-            50% { opacity: 0.6; }
-            100% { transform: translate(300px, 150px); opacity: 0; }
+        header {
+            margin-bottom: 40px;
         }
-
-        /* ヒーローエリアの画像加工 */
-        .hero-img-container {
-            position: relative;
-            mask-image: radial-gradient(circle at center, black 75%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle at center, black 75%, transparent 100%);
+        h1 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
         }
-
-        /* アイコンの浮遊アニメーション */
-        .floating-label {
-            animation: float 3s ease-in-out infinite;
-            backdrop-filter: blur(4px);
-            z-index: 30;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.05); }
-        }
-
-        .log-display {
-            background: rgba(93, 64, 55, 0.05);
-            border-left: 4px solid var(--accent-brown);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* 背景の脈動ライン */
-        .pulse-line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #fff, transparent);
+        .profile-img {
             width: 100%;
-            opacity: 0.2;
-            animation: pulse-scan 4s infinite;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
         }
-
-        @keyframes pulse-scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .description {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        /* note記事カードのデザイン */
+        .note-card-container {
+            margin: 30px auto;
+            text-align: left;
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e0d8c0;
+            max-width: 550px;
+            transition: transform 0.3s ease;
+        }
+        .note-card-container:hover {
+            transform: translateY(-5px);
+        }
+        .card-content {
+            padding: 25px;
+        }
+        .btn-note {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            background: #25b7c0;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-note:hover {
+            background: #1f9da5;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-10 px-4 overflow-hidden">
-        
-        <div class="absolute inset-0 z-0">
-            <div class="particle" style="top: 15%; left: 15%; width: 6px; height: 6px; animation-duration: 3s;"></div>
-            <div class="particle" style="top: 45%; left: 45%; width: 4px; height: 4px; animation-duration: 5s;"></div>
-            <div class="particle" style="top: 75%; left: 75%; width: 5px; height: 5px; animation-duration: 4s;"></div>
-            <div class="pulse-line" style="top: 25%;"></div>
-            <div class="pulse-line" style="top: 75%; animation-delay: 2s;"></div>
-        </div>
+<div class="container">
+    <header>
+        <h1>unibo09 Lab</h1>
+        <p>Local LLM & Image Generation enthusiast</p>
+    </header>
 
-        <div class="relative w-full max-w-4xl hero-img-container z-10 mb-10">
-            <img src="gpu.png" alt="Dual GPU Local AI Machine" class="w-full rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
-            
-            <div class="absolute top-[15%] left-[5%] floating-label bg-yellow-50/90 px-4 py-2 rounded-full border border-yellow-200 shadow-md flex items-center gap-2">
-                <span class="text-xl">✦</span>
-                <span class="text-sm font-bold">高解像度化特化</span>
-            </div>
-            <div class="absolute top-[45%] right-[5%] floating-label bg-pink-50/90 px-4 py-2 rounded-full border border-pink-200 shadow-md flex items-center gap-2" style="animation-delay: -1s;">
-                <span class="text-xl">✿</span>
-                <span class="text-sm font-bold">表情・感情制御</span>
-            </div>
-            <div class="absolute bottom-[20%] left-[20%] floating-label bg-blue-50/90 px-4 py-2 rounded-full border border-blue-200 shadow-md flex items-center gap-2" style="animation-delay: -2s;">
-                <span class="text-xl">♫</span>
-                <span class="text-sm font-bold">音声・アニメ同期</span>
-            </div>
-        </div>
+    <!-- メイン画像 -->
+    <img src="gpu.png" alt="Dual GPU Setup" class="profile-img">
 
-        <div class="text-center z-20 space-y-4">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-stone-800">道具を研ぎ、思考を繋ぐ。</h1>
-            <p class="text-lg md:text-xl opacity-70">28GB VRAM × 目的別洗練ワークフロー</p>
-        </div>
-    </section>
+    <div class="description">
+        <h2>About My Environment</h2>
+        <p>AMD RX 9070 XT (16GB) と NVIDIA RTX 3060 (12GB) を組み合わせた、合計28GB VRAMのローカルAI環境を構築しています。ComfyUIでの画像・動画生成や、最新のLLM検証を日々行っています。</p>
+    </div>
 
-    <section class="max-w-5xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        
-        <div class="space-y-8">
-            <div>
-                <h2 class="text-3xl font-bold mb-4 text-stone-800">効率化の管理術</h2>
-                <p class="leading-relaxed text-stone-600">
-                    単一の環境に頼らず、目的ごとに最適化された複数のワークフローを運用。
-                    プロンプトを「資産」に変え、複雑なノード管理を「機能美」へと昇華させる。
-                    ローカル環境を極限まで使いこなすための知見を共有しています。
-                </p>
+    <!-- note記事ピックアップカード -->
+    <div class="note-card-container">
+        <div class="card-content">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="background: #25b7c0; color: #ffffff; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.05em;">LATEST POST</span>
+                <span style="color: #999; font-size: 0.8rem;">note.com</span>
             </div>
             
-            <div class="flex">
-                <a href="https://note.com/clear_gecko3242" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center bg-stone-800 text-white px-10 py-4 rounded-xl hover:bg-stone-700 transition-all shadow-lg hover:-translate-y-1">
-                    noteで管理術・構築記を読む
-                </a>
-            </div>
+            <h3 style="margin: 0 0 15px 0; font-size: 1.3rem; color: #333; line-height: 1.4; font-weight: 700;">
+                Googleの新ローカルLLM「Gemma 4」をRX 9070 XTで動かしてみた
+            </h3>
+            
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 20px;">
+                最新のGemma 4を、構築した28GB VRAM環境で徹底検証。AMD RX 9070 XTでの動作感や推論速度についてレポートします。
+            </p>
+            
+            <a href="https://note.com/clear_gecko3242/n/n38ef2463e7e5?sub_rt=share_pw" target="_blank" class="btn-note">
+                この記事を詳しく読む
+            </a>
         </div>
+    </div>
 
-        <div class="log-display p-8 rounded-xl shadow-inner relative">
-            <p class="text-[10px] text-stone-400 mb-4 uppercase tracking-widest">// Monitoring Environment</p>
-            <div class="space-y-2 text-xs md:text-sm">
-                <p class="text-green-700 font-bold">SYSTEM READY: LOCAL AI ACTIVE</p>
-                <div class="pl-4 border-l border-stone-300 my-4 space-y-1 text-stone-500">
-                    <p>GPU 0: RX 9070 XT (16GB)</p>
-                    <p>GPU 1: RTX 3060 (12GB)</p>
-                    <p>Status: All Models loaded successfully.</p>
-                </div>
-                <p class="text-xl font-bold text-stone-800 animate-pulse mt-4">
-                    RESULT: 63.78 tokens/sec
-                </p>
-                <p class="text-[10px] opacity-30 mt-6 tracking-wider italic">Environment path hidden for security.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-16 text-center border-t border-stone-200">
-        <p class="opacity-30 text-[10px] uppercase tracking-[0.3em]">
-            &copy; 2026 Creative Atelier | Crafted with Gemini & Dual GPU Power
-        </p>
+    <footer>
+        <p>&copy; 2026 unibo09. All rights reserved.</p>
     </footer>
+</div>
 
-    <script>
-        // マウス移動による微かな視差効果（PCのみ）
-        document.addEventListener('mousemove', (e) => {
-            const container = document.querySelector('.hero-img-container img');
-            if (window.innerWidth > 768 && container) {
-                const x = (e.clientX / window.innerWidth - 0.5) * 10;
-                const y = (e.clientY / window.innerHeight - 0.5) * 10;
-                container.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
-            }
-        });
-    </script>
 </body>
 </html>
