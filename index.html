@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unibo09 Portfolio</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f5f5dc; /* ベージュ基調 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header {
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .description {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        /* note記事カードのデザイン */
+        .note-card-container {
+            margin: 30px auto;
+            text-align: left;
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e0d8c0;
+            max-width: 550px;
+            transition: transform 0.3s ease;
+        }
+        .note-card-container:hover {
+            transform: translateY(-5px);
+        }
+        .card-content {
+            padding: 25px;
+        }
+        .btn-note {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            background: #25b7c0;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-note:hover {
+            background: #1f9da5;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>unibo09 Lab</h1>
+        <p>Local LLM & Image Generation enthusiast</p>
+    </header>
+
+    <!-- メイン画像 -->
+    <img src="gpu.png" alt="Dual GPU Setup" class="profile-img">
+
+    <div class="description">
+        <h2>About My Environment</h2>
+        <p>AMD RX 9070 XT (16GB) と NVIDIA RTX 3060 (12GB) を組み合わせた、合計28GB VRAMのローカルAI環境を構築しています。ComfyUIでの画像・動画生成や、最新のLLM検証を日々行っています。</p>
+    </div>
+
+    <!-- note記事ピックアップカード -->
+    <div class="note-card-container">
+        <div class="card-content">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="background: #25b7c0; color: #ffffff; padding: 2px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; letter-spacing: 0.05em;">LATEST POST</span>
+                <span style="color: #999; font-size: 0.8rem;">note.com</span>
+            </div>
+            
+            <h3 style="margin: 0 0 15px 0; font-size: 1.3rem; color: #333; line-height: 1.4; font-weight: 700;">
+                Googleの新ローカルLLM「Gemma 4」をRX 9070 XTで動かしてみた
+            </h3>
+            
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.7; margin-bottom: 20px;">
+                最新のGemma 4を、構築した28GB VRAM環境で徹底検証。AMD RX 9070 XTでの動作感や推論速度についてレポートします。
+            </p>
+            
+            <a href="https://note.com/clear_gecko3242/n/n38ef2463e7e5?sub_rt=share_pw" target="_blank" class="btn-note">
+                この記事を詳しく読む
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 unibo09. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
