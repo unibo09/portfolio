@@ -7,14 +7,14 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #f5f5dc; /* ベージュ基調 */
+            background-color: #f5f5dc;
             color: #333;
             margin: 0;
             padding: 0;
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px; /* 3枚並びのために少し広げました */
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
@@ -41,7 +41,6 @@
             border-radius: 15px;
             margin-bottom: 40px;
         }
-        /* 記事カードを横に並べるための設定 */
         .article-grid {
             display: flex;
             flex-wrap: wrap;
@@ -52,7 +51,7 @@
         .note-card-container {
             flex: 1;
             min-width: 300px;
-            max-width: 420px;
+            max-width: 380px; /* 3枚バランス */
             text-align: left;
             background: #ffffff;
             border-radius: 15px;
@@ -83,7 +82,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            margin-top: auto; /* ボタンをカードの最下部に固定 */
+            margin-top: auto;
             transition: background 0.2s;
         }
         .btn-note:hover {
@@ -104,51 +103,48 @@
         <p>Local LLM & Image Generation enthusiast</p>
     </header>
 
-    <!-- メイン画像 -->
     <img src="gpu.png" alt="Dual GPU Setup" class="profile-img">
 
     <div class="description">
         <h2>About My Environment</h2>
-        <p>AMD RX 9070 XT (16GB) と NVIDIA RTX 3060 (12GB) を組み合わせた、合計28GB VRAMのローカルAI環境を構築しています。ComfyUIでの画像・動画生成や、最新のLLM検証を日々行っています。</p>
+        <p>AMD RX 9070 XT (16GB) と NVIDIA RTX 3060 (12GB) を組み合わせた、合計28GB VRAMのローカルAI環境を構築。ComfyUIでの創作や、Codex / NotebookLM を活用した知識管理の自動化を追求しています。</p>
     </div>
 
     <h2>Latest Reports</h2>
     <div class="article-grid">
-        <!-- 記事1: Gemma 4 -->
         <div class="note-card-container">
             <div class="card-content">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                     <span style="background: #25b7c0; color: #ffffff; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;">LATEST</span>
                     <span style="color: #999; font-size: 0.75rem;">note.com</span>
                 </div>
-                <h3 style="margin: 0 0 12px 0; font-size: 1.15rem; color: #333; line-height: 1.4; font-weight: 700;">
-                    Googleの新ローカルLLM「Gemma 4」をRX 9070 XTで動かしてみた
-                </h3>
-                <p style="font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 20px;">
-                    最新のGemma 4を、構築した28GB VRAM環境で徹底検証。AMD RX 9070 XTでの動作感や推論速度についてレポートします。
-                </p>
-                <a href="https://note.com/clear_gecko3242/n/n38ef2463e7e5?sub_rt=share_pw" target="_blank" class="btn-note">
-                    この記事を読む
-                </a>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.1rem; color: #333; line-height: 1.4;">Googleの新ローカルLLM「Gemma 4」をRX 9070 XTで動かしてみた</h3>
+                <p style="font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 20px;">最新のGemma 4を、構築した28GB VRAM環境で徹底検証。AMD環境での推論速度をレポート。</p>
+                <a href="https://note.com/clear_gecko3242/n/n38ef2463e7e5" target="_blank" class="btn-note">記事を読む</a>
             </div>
         </div>
 
-        <!-- 記事2: デュアルGPU構築記 -->
+        <div class="note-card-container">
+            <div class="card-content">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                    <span style="background: #6a5acd; color: #ffffff; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;">WORKFLOW</span>
+                    <span style="color: #999; font-size: 0.75rem;">note.com</span>
+                </div>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.1rem; color: #333; line-height: 1.4;">CodexからNotebookLMを使い、作業メモを再利用できる知識へ</h3>
+                <p style="font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 20px;">Playwrightによる自動操作とPDF運用を組み合わせ、知識ベースへの登録を自動化した記録。</p>
+                <a href="#" target="_blank" class="btn-note">記事を読む</a>
+            </div>
+        </div>
+
         <div class="note-card-container">
             <div class="card-content">
                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                     <span style="background: #a0a0a0; color: #ffffff; padding: 2px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold;">BUILD</span>
                     <span style="color: #999; font-size: 0.75rem;">note.com</span>
                 </div>
-                <h3 style="margin: 0 0 12px 0; font-size: 1.15rem; color: #333; line-height: 1.4; font-weight: 700;">
-                    RX 9070 XT + RTX 3060 デュアルGPU構築記——試行錯誤の結果、最適な構成にたどり着いた
-                </h3>
-                <p style="font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 20px;">
-                    AMDとNVIDIAを共存させ、合計28GB VRAMを実現するためのパーツ選びから設定まで、構築の全記録。
-                </p>
-                <a href="https://note.com/clear_gecko3242/n/n47e4cd67e4b8?sub_rt=share_pw" target="_blank" class="btn-note">
-                    この記事を読む
-                </a>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.1rem; color: #333; line-height: 1.4;">RX 9070 XT + RTX 3060 デュアルGPU構築記——最適な構成への記録</h3>
+                <p style="font-size: 0.85rem; color: #555; line-height: 1.6; margin-bottom: 20px;">28GB VRAMを実現するためのパーツ選びから設定まで、試行錯誤の全記録。</p>
+                <a href="https://note.com/clear_gecko3242/n/n47e4cd67e4b8" target="_blank" class="btn-note">記事を読む</a>
             </div>
         </div>
     </div>
