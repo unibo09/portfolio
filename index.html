@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #f5f5dc; /* ベージュ基調 */
+            background-color: #f5f5dc;
             color: #333;
             margin: 0;
             padding: 0;
@@ -27,13 +27,21 @@
             color: #4a4a4a;
             margin-bottom: 10px;
         }
+        /* メイン画像を横に並べるための設定 */
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
         .profile-img {
-            width: 100%;
-            max-width: 800px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 580px;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
         }
         .description {
             background: rgba(255, 255, 255, 0.5);
@@ -103,7 +111,10 @@
         <p>Local LLM & Image Generation enthusiast</p>
     </header>
 
-    <img src="スクリーンショット 2026-04-22 120025.png" alt="Lab Main Visual" class="profile-img">
+    <div class="hero-images">
+        <img src="IMG_0695.JPEG" alt="Lab Visual 1" class="profile-img">
+        <img src="スクリーンショット 2026-04-22 120025.png" alt="Lab Visual 2" class="profile-img">
+    </div>
 
     <div class="description">
         <h2>About My Environment</h2>
