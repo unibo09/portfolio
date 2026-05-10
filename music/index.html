@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJK4QLG874"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KJK4QLG874');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unibo09 Music Portfolio</title>
+    <style>
+        :root {
+            --bg: #111512;
+            --panel: #1c211d;
+            --panel-soft: #252b25;
+            --text: #f4f1e8;
+            --muted: #b9b3a4;
+            --line: #3d453c;
+            --accent: #25b7c0;
+            --accent-warm: #ef6f3e;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        a {
+            color: inherit;
+        }
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 28px 20px 48px;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .brand {
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+        .back-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 460px);
+            gap: 32px;
+            align-items: center;
+            padding: 32px 0 42px;
+        }
+        .hero h1 {
+            margin: 0 0 14px;
+            font-size: clamp(2.1rem, 6vw, 4.8rem);
+            line-height: 1.05;
+        }
+        .hero p {
+            max-width: 620px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+        .hero-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+        }
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #061315;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .button.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--line);
+        }
+        .section {
+            padding: 34px 0;
+            border-top: 1px solid var(--line);
+        }
+        .section h2 {
+            margin: 0 0 18px;
+            font-size: 1.5rem;
+        }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+        .work-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        .work-card img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+        .work-card-body {
+            padding: 18px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        .tag {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-bottom: 10px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: var(--accent-warm);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .work-card h3 {
+            margin: 0 0 8px;
+            font-size: 1.08rem;
+        }
+        .work-card p {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+        .work-card .button {
+            margin-top: auto;
+            width: 100%;
+        }
+        .profile-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .profile-list li {
+            padding: 16px;
+            background: var(--panel-soft);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+        footer {
+            padding-top: 28px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .visitor-counter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+        }
+        .visitor-counter img {
+            height: 24px;
+        }
+        @media (max-width: 820px) {
+            .hero,
+            .work-grid,
+            .profile-list {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                padding-top: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="topbar" aria-label="Page navigation">
+            <div class="brand">unibo09 Music</div>
+            <a class="back-link" href="../">Labへ戻る</a>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <div>
+                    <h1>Music Production Portfolio</h1>
+                    <p>ブラウザで演奏できるドラムアプリを中心に、リズム制作、音楽ツール、制作ワークフローをまとめるための音楽制作ポートフォリオです。</p>
+                    <div class="actions">
+                        <a class="button" href="https://precious-frangollo-c3a158.netlify.app" target="_blank" rel="noopener noreferrer">ドラムアプリを開く</a>
+                        <a class="button secondary" href="../">メインポートフォリオ</a>
+                    </div>
+                </div>
+                <img class="hero-image" src="../drum-app-preview.png" alt="Browser drum app preview">
+            </section>
+
+            <section class="section">
+                <h2>Works</h2>
+                <div class="work-grid">
+                    <article class="work-card">
+                        <img src="../drum-app-preview.png" alt="Browser drum app preview">
+                        <div class="work-card-body">
+                            <span class="tag">WEB APP</span>
+                            <h3>ブラウザで叩けるドラムアプリ試作版</h3>
+                            <p>キーボード演奏、録音、譜面表示、再生、MIDI出力、4/8/16ビートやジャンル別プリセットに対応したWebドラムです。</p>
+                            <a class="button" href="https://precious-frangollo-c3a158.netlify.app" target="_blank" rel="noopener noreferrer">アプリを開く</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-card-body">
+                            <span class="tag">BEAT</span>
+                            <h3>Rhythm Sketches</h3>
+                            <p>ロック、ポップ、ヒップホップ向けのリズムパターンや制作メモを追加していく枠です。</p>
+                            <a class="button secondary" href="#focus">制作テーマを見る</a>
+                        </div>
+                    </article>
+
+                    <article class="work-card">
+                        <div class="work-card-body">
+                            <span class="tag">TOOLS</span>
+                            <h3>Music Workflow</h3>
+                            <p>ブラウザアプリ、MIDI、録音、AI支援を組み合わせた音楽制作ワークフローを整理していく枠です。</p>
+                            <a class="button secondary" href="../">活動全体を見る</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="focus">
+                <h2>Focus</h2>
+                <ul class="profile-list">
+                    <li>ブラウザ上で触れる音楽ツール制作</li>
+                    <li>ドラム、ビート、リズムパターンの試作</li>
+                    <li>AIとローカル環境を活用した制作支援</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>GA4計測中</p>
+            <a class="visitor-counter" href="https://hits.sh/unibo09.github.io/portfolio/music/" target="_blank" rel="noopener noreferrer" aria-label="View music portfolio access counter details">
+                <img src="https://hits.sh/unibo09.github.io/portfolio/music.svg?label=music%20views&color=25b7c0&labelColor=4a4a4a" alt="Music portfolio access counter">
+            </a>
+            <p>&copy; 2026 unibo09. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -104,6 +104,29 @@
         .btn-note:hover {
             background: #1f9da5;
         }
+        .site-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+        .site-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            padding: 10px 16px;
+            background: #4a4a4a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .site-link:hover {
+            background: #333333;
+        }
         footer {
             margin-top: 60px;
             font-size: 0.9rem;
@@ -126,6 +149,9 @@
     <header>
         <h1>unibo09 Lab</h1>
         <p>Local LLM & Image Generation enthusiast</p>
+        <nav class="site-links" aria-label="Portfolio sections">
+            <a class="site-link" href="music/">音楽制作ポートフォリオ</a>
+        </nav>
     </header>
 
     <div class="hero-images">
